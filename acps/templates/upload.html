@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+<h1>This is the Key upload page. </h1>
+<p>After downloading the configuration files and scripts, the users should run the key_generatoin.py script that creates a serialized_evaluation_keys.ekl file that should be uploaded here</p>
+
+</div>
+
+<div class="container">
+
+<form action="/upload/" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {{form}}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+
+{% endblock %}

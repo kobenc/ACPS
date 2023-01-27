@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+<h1>This is the Prediction page. </h1>
+<p>The users can encrypt their data using the encrypt.py script, and upload the generated encrypted_data file. Once the prediction runs, the users download the result that can be decrypted using the decrypt.py file.</p>
+</div>
+
+<div class="container">
+
+<form action="/predict/" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {{form}}
+    </div>
+    <input type="submit" value="Submit">
+</form>
+
+</div>
+{% endblock %}
